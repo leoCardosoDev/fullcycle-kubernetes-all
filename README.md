@@ -39,5 +39,11 @@ kubectl get persistentvolumeclaim
 kubectl create secret generic mysql-pass --from-literal=password='a1s2d3f4'
 kubctl get secret
 
+kubectl apply -f service.yaml
+kubectl get services
+kubectl get svc
+kubectl get pods
+kubectl exec -it mysql-server-855988547-f2rvd bash
 
-
+kubectl get persistentvolumeclaims
+kubectl delete persistentvolumeclaims mysql-pv-claim
