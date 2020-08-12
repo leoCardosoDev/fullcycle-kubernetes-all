@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: hello-world-nginx
 spec:
-  replicas: 5
+  replicas: 6
   selector:
     matchLabels:
       app: hello-world-nginx 
@@ -19,8 +19,11 @@ spec:
         - containerPort: 80
         resources:
           requests:
-            memory: "64Mi"
+            memory: "100Mi"
             cpu: "200m"
+          limits:
+            cpu: "250m"
+            memory: "200Mi"
 
         volumeMounts:
         - mountPath: /etc/nginx/conf.d
